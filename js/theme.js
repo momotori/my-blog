@@ -1,7 +1,7 @@
 const HLJS_LIGHT_HREF =
   "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css";
 const HLJS_DARK_HREF =
-  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css";
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dracula.min.css";
 
 function applyHljsTheme(theme) {
   const link = document.getElementById("hljs-theme");
