@@ -121,6 +121,71 @@ main {
   padding: 2rem 1.25rem 4rem;
 }
 
+/* 미니 웹앱 */
+.apps-section {
+  margin-bottom: 2.5rem;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+}
+
+.app-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.app-card__link {
+  display: block;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.app-card__link:hover {
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.app-card__preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.app-card__preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 400%;
+  border: 0;
+  pointer-events: none;
+  transform: scale(0.25);
+  transform-origin: top left;
+}
+
+.app-card__title {
+  margin: 0.85rem 0.9rem 0.3rem;
+  font-size: 1.05rem;
+}
+
+.app-card__desc {
+  margin: 0 0.9rem 0.9rem;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
 /* 목록 페이지 */
 .controls {
   display: flex;

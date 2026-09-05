@@ -18,6 +18,21 @@
 </header>
 
 <main>
+  <section class="apps-section">
+    <h2 class="section-title">미니 웹앱</h2>
+    <ul class="app-grid">
+      <li class="app-card">
+        <a class="app-card__link" href="apps/2048/index.html" aria-label="2048 게임 열기">
+          <div class="app-card__preview">
+            <iframe src="apps/2048/index.html" loading="lazy" tabindex="-1" title="2048 미리보기"></iframe>
+          </div>
+          <h3 class="app-card__title">2048</h3>
+          <p class="app-card__desc">방향키나 스와이프로 타일을 밀어 숫자를 합치는 클래식 퍼즐 게임. 최고 점수를 갱신해보세요.</p>
+        </a>
+      </li>
+    </ul>
+  </section>
+
   <div class="controls">
     <input id="search-input" class="search-input" type="search" placeholder="글 검색..." aria-label="글 검색" />
     <p id="search-status" class="search-status"></p>
