@@ -1,0 +1,351 @@
+:root {
+  --bg: #ffffff;
+  --bg-secondary: #f5f5f7;
+  --text: #1a1a1a;
+  --text-secondary: #5c5c66;
+  --accent: #3b5bdb;
+  --accent-text: #ffffff;
+  --border: #e2e2e6;
+  --code-bg: #f5f5f7;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Apple SD Gothic Neo",
+    "Noto Sans KR", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
+    monospace;
+  --max-width: 700px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14151a;
+    --bg-secondary: #1c1e24;
+    --text: #e8e8ec;
+    --text-secondary: #a0a0ac;
+    --accent: #7c9bff;
+    --accent-text: #14151a;
+    --border: #2c2e36;
+    --code-bg: #1c1e24;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14151a;
+  --bg-secondary: #1c1e24;
+  --text: #e8e8ec;
+  --text-secondary: #a0a0ac;
+  --accent: #7c9bff;
+  --accent-text: #14151a;
+  --border: #2c2e36;
+  --code-bg: #1c1e24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.25rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.site-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.site-title:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text);
+  border-radius: 999px;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+}
+
+/* 목록 페이지 */
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: var(--text);
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.search-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.search-status {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  min-height: 1.2em;
+}
+
+.tag-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-chip {
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.tag-chip:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.tag-chip[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.post-card {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.75rem;
+}
+
+.post-card:last-child {
+  border-bottom: none;
+}
+
+.post-card__title {
+  margin: 0 0 0.35rem;
+  font-size: 1.25rem;
+}
+
+.post-card__title a {
+  color: var(--text);
+}
+
+.post-card__meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.post-card__tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.post-card__tag {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.post-card__excerpt {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.empty-state {
+  color: var(--text-secondary);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* 상세 페이지 */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.post-header {
+  margin-bottom: 2rem;
+}
+
+.post-header__title {
+  font-size: clamp(1.6rem, 4vw + 1rem, 2.4rem);
+  line-height: 1.3;
+  margin: 0 0 0.6rem;
+}
+
+.post-header__meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3 {
+  line-height: 1.35;
+  margin-top: 2em;
+  margin-bottom: 0.6em;
+}
+
+.post-body h1 {
+  font-size: clamp(1.4rem, 3vw + 1rem, 1.9rem);
+}
+
+.post-body h2 {
+  font-size: clamp(1.2rem, 2vw + 1rem, 1.5rem);
+}
+
+.post-body p,
+.post-body ul,
+.post-body ol {
+  margin: 0 0 1.2em;
+}
+
+.post-body blockquote {
+  margin: 1.5em 0;
+  padding: 0.2em 1.2em;
+  border-left: 3px solid var(--accent);
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  border-radius: 0 6px 6px 0;
+}
+
+.post-body code {
+  font-family: var(--font-mono);
+  background: var(--code-bg);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.post-body pre {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.post-body pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+.post-body table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+.post-body th,
+.post-body td {
+  border: 1px solid var(--border);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .site-header__inner {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .post-header__title {
+    font-size: 1.5rem;
+  }
+}

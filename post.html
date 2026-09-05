@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>글 · My Blog</title>
+<script src="js/theme-init.js"></script>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" id="hljs-theme" href="" />
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-title" href="index.html">My Blog</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="다크 모드 전환"></button>
+  </div>
+</header>
+
+<main>
+  <a class="back-link" href="index.html">&larr; 목록으로</a>
+  <article id="post-article"></article>
+</main>
+
+<noscript>이 사이트는 자바스크립트가 필요합니다.</noscript>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script type="module" src="js/post.js"></script>
+</body>
+</html>
